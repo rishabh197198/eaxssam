@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+/* 
+  In Tailwind v4, standard utilities are automatically available. 
+  If you are using @apply in a separate CSS block, you use the theme() 
+  function or standard @apply directly.
+*/
+
+@theme {
+  /* 
+    This replaces tailwind.config.js for v4. 
+    Adding your custom "clean aesthetic" tokens here.
+  */
+  --color-exam-primary: #1a1a1a;
+  --color-exam-secondary: #3b82f6;
+  --color-exam-bg: #f8fafc;
+  --color-exam-border: #e2e8f0;
+  
+  --font-sans: "Inter", "system-ui", "-apple-system", "sans-serif";
+}
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  body {
+    @apply antialiased bg-exam-bg text-exam-primary;
+    /* We use selection color to keep the aesthetic premium */
+    background-color: var(--color-exam-bg);
+    color: var(--color-exam-primary);
+  }
+}
+
+@layer utilities {
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400;
+  }
+
+  /* Custom focus ring for our non-gradient look */
+  .custom-focus {
+    @apply outline-none ring-2 ring-exam-secondary ring-offset-2 ring-offset-exam-bg;
+  }
+}
+
+@theme {
+  --color-exam-primary: #1a1a1a;
+  --color-exam-secondary: #3b82f6;
+  --color-exam-bg: #f8fafc;
+  --color-exam-border: #e2e8f0;
+  
+  /* Custom animation keyframes */
+  --keyframes-scan: {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(180px); } /* Approx height of video feed */
+  };
+}
+
+@layer base {
+  /* ... rest of your base styles */
+}
+
+/* Ensure the animation is registered */
+@keyframes scan {
+  from { top: 0; }
+  to { top: 100%; }
+}

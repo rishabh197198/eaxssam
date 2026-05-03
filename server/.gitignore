@@ -1,0 +1,30 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Databases
+db.sqlite3
+db.sqlite3-journal
+
+# Environment & Secrets
+.env
+venv/
+env/
+ENV/
+auth_key.json
+
+# IDEs and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Static & Media (User uploads)
+static/
+media/
+
+# Build files
+dist/
+build/
+*.egg-info/
