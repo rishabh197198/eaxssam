@@ -1,0 +1,24 @@
+# OS files
+.DS_Store
+Thumbs.db
+*.local
+
+# IDEs
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# This ensures that if you accidentally have 
+# node_modules or pycache in the root, they stay ignored
+node_modules/
+__pycache__/
+venv/
+env/
+.env
+
+# Build outputs
+dist/
+build/
